@@ -19,6 +19,7 @@ def chatgpt_converstion(conversation_log):
         'role': response.choices[0].message.role,
         'content': response.choices[0].message.content.strip()
     })
+
     return conversation_log
 
 
@@ -27,10 +28,13 @@ conversations.append({'role': 'user', 'content': 'Tell me a joke'})
 conversations = chatgpt_converstion(conversations)
 print('{0}: {1}\n'.format(conversations[-1]['role'].strip(), conversations[-1]['content'].strip()))
 
-while True:
-    promt = input('User:')
-    conversations.append({'role': 'user',
-                          'content': promt})
-    conversations = chatgpt_converstion(conversations)
-    print()
-    print('{0}: {1}\n'.format(conversations[-1]['role'].strip(), conversations[-1]['content'].strip()))
+
+
+# while True:
+#     promt = input('User:')
+#     conversations.append({'role': 'user',
+#                           'content': promt})
+#     conversations = chatgpt_converstion(conversations)
+#     print()
+#     print('{0}: {1}\n'.format(conversations[-1]['role'].strip(), conversations[-1]['content'].strip()))
+
